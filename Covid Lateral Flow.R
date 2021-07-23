@@ -18,21 +18,20 @@ TestTime = function() {return(rnorm(1, 1.5, 0.25))}    # Test Process Time - Nor
 SimTime = 240
 
 
-# How Statistical Variables Work In R
+# Working of Statistical Variables In R
 rexp(5, 1/3)
 mean(rexp(1000, 1/3))
 hist(rexp(1000, 1/3))
 help(rexp)
 
-# Task 1 Exercise - Generate Normal Distribution 
-#                   (Mean = 0, Std Dev = 1) 
+# Generate Normal Distribution -(Mean = 0, Std Dev = 1) 
 rnorm(5,0,1)
 hist(rnorm(500,0,1))
 # Display 5 Values, Plot Histogram (N = 500)
 
 
 # *********************************************************
-# Define Trajectory, Resources, Arrivals
+# Defining Trajectory, Resources, Arrivals
 # *********************************************************
 
 # A. Define Process Trajectory
@@ -91,10 +90,9 @@ head(arrivals)
 # Display path of single individual
 subset(arrivals, name == "Student8")
 
-# Task 3 Exercise:
-#   A. Store "arrivals" Results With 
+# Store "arrivals" Results With 
 #             'per_resource = FALSE'.
-#   B. Plot Histogram of Flow Time
+# Plot Histogram of Flow Time
 resources = get_mon_resources(env)
 head(arrivals)
 arrivals = get_mon_arrivals(env, per_resource = FALSE)
@@ -116,9 +114,8 @@ plot(resources, metric = "usage", "Registrar")
 # Plot Usage Chart (Instantaneous) 
 plot(resources, metric = "usage", "Registrar", items = "server", steps = TRUE)
 
-# Task 4 Exercise
-#      Plot the Usage of "Bay" 
-#      With Steps = TRUE
+# Plot the Usage of "Bay" 
+# With Steps = TRUE
 plot(resources, metric="usage", "Bay", steps = TRUE )
 
 plot(resources, metric="usage", "Bay", items = "server", steps = TRUE )
@@ -207,9 +204,8 @@ plot(arrivals2, metric="flow_time")
 hist(arrivals2$activity_time)
 head(arrivals2)
 
-# Task 5 Exercise: 
-#        Plot the Waiting Time of Arrivals 
-#        Use metric = "waiting_time"
+# Plot the Waiting Time of Arrivals 
+# Use metric = "waiting_time"
 plot(arrivals2, metric = "waiting_time")
 # *********************************************************
 # Log Activity Names - "VisitStep" Function
@@ -308,8 +304,7 @@ EventLogPlot2(eventlog)
 FlowTime = EventLogPlot2(eventlog)
 plot(FlowTime, type = "l", col = "blue")
 
-# Task 6 Exercise: 
-#        Plot Histogram of Flow Time 
+# Plot Histogram of Flow Time 
 hist(FlowTime)
 
 # End of Guided Project
